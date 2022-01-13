@@ -1,0 +1,29 @@
+class Stack:
+    def __init__(self):
+        self.items = []
+    def push(self, value):
+        self.items.append(value)
+    def isEmpty(self):
+        if self.items == []:
+            return True
+        else:
+            return False
+    def pop(self):
+        if self.isEmpty():
+            return "The Stack is empty"
+        else:
+            return self.items.pop()
+
+class Solution:
+    def reverseString(self, s) -> None:
+        """
+        Do not return anything, modify s in-place instead.
+        """
+        stack = Stack()
+        lst = []
+        for i in s:
+            stack.push(i)
+            print(i)
+        while not stack.isEmpty():
+            lst.append(stack.pop())
+        return lst
