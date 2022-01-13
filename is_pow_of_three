@@ -1,1 +1,28 @@
 
+class Solution2:
+    def isPowerOfThree(self, n: int) -> bool:
+        if n == 0:
+            return False
+        elif n == 1:
+            return True
+        elif n % 3 == 0:
+            return True if n//3 * self.isPowerOfThree(int(n/3)) else False
+        else:
+            return False
+            
+#version 2
+class Solution:
+    def isPowerOfThree(self, n: int) -> bool:
+        i = 0
+        pointer = True
+        while pointer :
+            if 3 ** i == n:
+                pointer = False
+            elif 3 ** i > n:
+                break
+            else:
+                i += 1
+        if not pointer:
+            return True
+        else:
+            return False
