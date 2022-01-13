@@ -1,0 +1,20 @@
+class Solution:
+    def myPow(self, x: float, n: int) -> float:
+        def helper(n, p):
+            if p == 0:
+                return 1
+            if p == 1:
+                return n
+            x = helper(n, p //2)
+            if p % 2:
+                return x * x * n
+            return x*x
+        if n < 0:
+            return 1/helper(x, abs(n))
+        return helper(x, n)
+        
+#version2
+#Using built-in function pow() works too but it is too slow!
+class Solution2: 
+    def myPow(self, x, n):
+        return pow(x, n)
