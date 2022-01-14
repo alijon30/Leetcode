@@ -1,0 +1,10 @@
+class Solution:
+    def fib(self, n, memo = {}):
+        if n in memo.keys():
+            return memo[n]
+        if n == 0:
+            return 0
+        elif n in [1, 2]:
+            return 1
+        memo[n] = self.fib(n-1) + self.fib(n-2)
+        return memo[n]
