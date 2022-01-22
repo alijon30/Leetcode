@@ -18,3 +18,5 @@ Output: 1
 class Solution:
     def countSegments(self, s: str):
         return len([x for x in s.split(" ") if len(x)>=1]) or 0
+
+
