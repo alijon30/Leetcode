@@ -63,6 +63,41 @@ class Solution:
         seats = MergeSort(seats)
         students = MergeSort(students)
         count = 0
+  
         for i in range(len(students)):
             count += abs(students[i] - seats[i])
         return count
+     
+     
+ class Solution:
+    def minMovesToSeat(self, seats, students) -> int:
+        def InsertionSort(nums):
+            for i in range(1, len(nums)):
+                j = i -1
+                current = nums[i]
+                while j >= 0 and nums[j] > current:
+                    nums[j+1] = nums[j]
+                    j -= 1
+                nums[j+1] = current
+            return nums
+
+        seats = InsertionSort(seats)
+        students = InsertionSort(students)
+        count = 0
+        for i in range(len(students)):
+            count += abs(students[i]- seats[i])
+        return count
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
