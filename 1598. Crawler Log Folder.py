@@ -104,7 +104,61 @@ class Stack:
             node = self.Linked.head.value
             return node
             
-            
+ VERSION 2
+ 
+ 
+ class Solution:
+    def minOperations(self, logs: List[str]) -> int:
+        stack = Stack()
+        
+        count = 0
+        for i in range(len(logs)):
+            if logs[i] == "../":
+                if not stack.isEmpty():
+                    stack.pop()
+                    count -= 1
+            elif logs[i] == "./":
+                continue
+            elif logs[i] == "x/":
+                stack.push("X")
+                count +=1
+            else:
+                stack.push(logs[i])
+                count += 1
+        return count if count > 0 else 0
+        
+        
+        
+        
+        
+class Stack:
+    def __init__(self):
+        self.list = []
+    
+    def isEmpty(self):
+        if self.list == []:
+            return True
+        else:
+            return False
+    
+    def push(self, value):
+        self.list.append(value)
+        
+    def pop(self):
+        if self.isEmpty():
+            return "The stack is empty"
+        else:
+            return self.list.pop()
+    
+    def peek(self):
+        if self.isEmpty():
+            return "The Stack is empty"
+        else:
+            return self.list[-1]
+         
+         
+         
+         
             
             
             
