@@ -115,6 +115,25 @@ class Stack:
             temp = self.Linked.head.value
             return temp
     
+   Solution2:
+    
+    class Solution:
+    def calPoints(self, ops: List[str]) -> int:
+        lst = []
+        for i in range(len(ops)):
+            if ops[i] == "D":
+                lst.append(lst[-1]*2)
+            elif ops[i] == "C":
+                lst.pop()
+            elif ops[i] == "+":
+                lst.append(lst[-1] + lst[-2])
+            else:
+                lst.append(int(ops[i]))
         
+        return sum(lst)
+       
+       
+       
+       
     
     
